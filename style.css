@@ -46,5 +46,17 @@ body{
 .square:hover{
     transition: .7s;
     border-radius:50%;
-    background-color:#7d1412;
+    background-color:#123b7d;
+}
+.result{
+    color: #7d1412;
+    margin: auto;
+    font-weight: 700;
+    font-size: 70px;
+}
+.result2{
+    color:#0015ff;
+    margin: auto;
+    font-weight: 7000;
+    font-size: 70px;
 }
