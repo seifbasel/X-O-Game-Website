@@ -3,6 +3,7 @@
 Welcome to the XO Game, a classic two-player Tic-Tac-Toe game with a modern twist! This simple web-based game allows you to play against a friend and keep track of your scores.
 
 ## Table of Contents
+
 - [Introduction](#introduction)
 - [Getting Started](#getting-started)
 - [Gameplay](#gameplay)
@@ -22,6 +23,7 @@ This project is built using HTML, CSS, and JavaScript and includes a simple user
 To play the XO Game, follow these simple steps:
 
 1. Clone the repository to your local machine:
+
    ```bash
    git clone https://github.com/seifbasel/web-project2-X-O-GAME
    ```
@@ -47,6 +49,7 @@ To play the XO Game, follow these simple steps:
 ## Screenshots
 
 ![Alt text](gameplay.png) ![Alt text](gameplay2.png)
+
 ## Contributing
 
 We welcome contributions to improve the XO Game. If you have any ideas for new features, bug fixes, or improvements, please feel free to open an issue or submit a pull request. We appreciate your input!
