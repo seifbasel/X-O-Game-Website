@@ -48,7 +48,7 @@ To play the XO Game, follow these simple steps:
 
 ## Screenshots
 
-![Alt text](gameplay.png)![Alt text](gameplay2.png)
+![Alt text](gameplay1.png)![Alt text](gameplay1.2.png)
 
 ## Contributing
 
