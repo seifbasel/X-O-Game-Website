@@ -57,7 +57,7 @@ We welcome contributions to improve the XO Game. If you have any ideas for new f
 
 ## Demo
 
-Check out the live demo [here(https://seifbasel.github.io/X-O-Game-Website/)].
+Check out the live demo [here](https://seifbasel.github.io/X-O-Game-Website/).
 
 
 ## License
