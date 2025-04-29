@@ -46,10 +46,6 @@ To play the XO Game, follow these simple steps:
 - **Score Tracking:** Keep track of your wins as Player X and Player O.
 - **Responsive Design:** The game is designed to work smoothly on various screen sizes, making it accessible on both desktop and mobile devices.
 
-## Screenshots
-
-![Alt text](gameplay1.png)![Alt text](gameplay1.2.png)
-
 ## Contributing
 
 We welcome contributions to improve the XO Game. If you have any ideas for new features, bug fixes, or improvements, please feel free to open an issue or submit a pull request. We appreciate your input!

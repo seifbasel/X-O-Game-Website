@@ -1,53 +1,107 @@
-body {
+/* Reset and base */
+* {
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
+  }
+  
+  body {
     font-family: 'Segoe UI', sans-serif;
-    background: #f0f2f5;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    background: linear-gradient(to bottom right, #a18cd1, #fbc2eb);
     height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
   
+  /* Container */
   .game-container {
+    background-color: #ffffffcc;
+    padding: 2rem;
+    border-radius: 1.5rem;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
     text-align: center;
+    animation: fadeIn 1s ease-in-out;
   }
   
+  /* Title */
   #title {
     font-size: 2.5rem;
-    color: #333;
-    margin-bottom: 20px;
+    color: #222;
+    margin-bottom: 1.2rem;
+    font-weight: bold;
+    animation: pulse 2s infinite;
   }
   
+  /* Scoreboard */
   .scoreboard {
     display: flex;
-    justify-content: center;
-    gap: 2rem;
+    justify-content: space-around;
     font-size: 1.2rem;
-    margin-bottom: 20px;
-    color: #444;
+    margin-bottom: 2rem;
+    font-weight: 500;
+    color: #333;
   }
   
+  /* Board grid */
   .board {
     display: grid;
     grid-template-columns: repeat(3, 100px);
-    grid-template-rows: repeat(3, 100px);
-    gap: 10px;
+    gap: 15px;
     justify-content: center;
+    animation: slideUp 1s ease-out;
   }
   
   .cell {
+    width: 100px;
+    height: 100px;
     background-color: #fff;
-    border: 2px solid #ccc;
+    border-radius: 0.75rem;
     font-size: 2rem;
+    font-weight: bold;
+    color: #3b3b3b;
     display: flex;
     align-items: center;
     justify-content: center;
     cursor: pointer;
-    transition: background 0.2s;
+    transition: transform 0.2s ease, background-color 0.3s;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+    user-select: none;
   }
   
   .cell:hover {
-    background: #e6e6e6;
+    background-color: #e1e1e1;
+    transform: scale(1.05);
+  }
+  
+  .cell.played-x {
+    color: #ff3c3c;
+    animation: pop 0.3s ease-in-out;
+  }
+  
+  .cell.played-o {
+    color: #0077ff;
+    animation: pop 0.3s ease-in-out;
+  }
+  
+  /* Animations */
+  @keyframes fadeIn {
+    from { opacity: 0; transform: scale(0.95); }
+    to { opacity: 1; transform: scale(1); }
+  }
+  
+  @keyframes pulse {
+    0%, 100% { color: #333; }
+    50% { color: #ff3c3c; }
+  }
+  
+  @keyframes slideUp {
+    from { transform: translateY(20px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+  }
+  
+  @keyframes pop {
+    0% { transform: scale(0.7); opacity: 0; }
+    100% { transform: scale(1); opacity: 1; }
   }
   
