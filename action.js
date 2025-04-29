@@ -1,103 +1,71 @@
-function won(winer){
-    let name= document.getElementById("title");
-        name.innerHTML=winer+" WON ";
-    // let counter=0
-    // setInterval(function(){name.innerHTML =counter+=1 },1000);
-    // setTimeout(function(){location.reload()},4000);
-    result(winer);
-    setTimeout(restart,2000)
-    
-}
+let turn = "x";
+let array = [];
+let o_count = 0;
+let x_count = 0;
 
-function tie(){
-    let name= document.getElementById("title");
-        name.innerHTML=" TIE ";
-    // setInterval(function(){name.innerHTML =counter+=1 },1000);
-    // setTimeout(function(){location.reload()},4000);
-    restart()
-}
-
-
-
-function restart (){
-    for(let i=1; i<10; i+=1){
-
-        array=document.getElementById("item_"+i);
-        array.innerHTML="";
-    }
+function play(id) {
+  const cell = document.getElementById(id);
+  if (cell.innerHTML === "") {
+    cell.innerHTML = turn;
+    turn = turn === "x" ? "o" : "x";
     winner();
+  }
 }
 
-let o_count=0
-let x_count=0
-function result(winner){
+function winner() {
+  for (let i = 1; i < 10; i++) {
+    array[i] = document.getElementById(`item_${i}`).innerHTML;
+  }
 
-    if (winner === "o") {
-        let o = document.getElementById("2");
-            o.innerHTML =`Player O --> ${o_count+=1} `;
-    }
-    else if (winner === "x"){
-        let x = document.getElementById("1");
-            x.innerHTML =`Player X --> ${x_count+=1}`;
-}
-}
+  const winCombos = [
+    [1, 2, 3],
+    [4, 5, 6],
+    [7, 8, 9],
+    [1, 4, 7],
+    [2, 5, 8],
+    [3, 6, 9],
+    [1, 5, 9],
+    [3, 5, 7]
+  ];
 
-function winner(){
-    for(let i=1; i<10; i+=1){
+  for (let combo of winCombos) {
+    const [a, b, c] = combo;
+    if (array[a] && array[a] === array[b] && array[a] === array[c]) {
+      won(array[a]);
+      return;
+    }
+  }
 
-        array[i]=document.getElementById("item_"+i).innerHTML;
-    }
-
-    if (array[1]==array[2] && array[2]==array[3] && array[1]!=""){
-        won(array[1]);
-    }
-    else if (array[4]==array[5] && array[5]==array[6] && array[4]!=""){
-        won(array[4]);
-    }
-    else if (array[7]==array[8] && array[8]==array[9] && array[7]!=""){
-        won(array[7]);
-    }
-    else if (array[1]==array[4] && array[4]==array[7] && array[4]!=""){
-        won(array[1]);
-    }
-    else if (array[2]==array[5] && array[5]==array[8] && array[5]!=""){
-        won(array[2]);
-    }
-    else if (array[4]==array[5] && array[5]==array[6] && array[5]!=""){
-        won(array[4]);
-    }
-    else if (array[3]==array[6] && array[6]==array[9] && array[6]!=""){
-        won(array[3]);
-    }
-    
-    else if (array[1]==array[5] && array[5]==array[9] && array[5]!=""){
-        won(array[1]);
-
-    }
-
-    else if (array[3]==array[5] && array[5]==array[7] && array[5]!=""){
-        won(array[3]);
-        
-    }
-    else if(array[1]!=""&&array[2]!="" && array[3]!="" &&array[4]!=""&&array[5]!="" && array[6]!="" &&array[7]!=""&&array[8]!="" && array[9]!=""){
-        tie();
-    }
-
-
+  if (array.slice(1).every(cell => cell !== "")) {
+    tie();
+  }
 }
 
-let turn ="x";
-let array=[];
-function play(id){
-    let element=document.getElementById(id);
-    if (turn==="x" && element.innerHTML==""){
-        element.innerHTML="x";
-        turn="o";
-    }
-    else if (turn==="o" && element.innerHTML==""){
+function won(winner) {
+  document.getElementById("title").textContent = `${winner.toUpperCase()} WON`;
+  result(winner);
+  setTimeout(restart, 1500);
+}
 
-        element.innerHTML="o";
-        turn="x";
-    }
-    winner();
+function tie() {
+  document.getElementById("title").textContent = "TIE";
+  setTimeout(restart, 1500);
+}
+
+function result(winner) {
+  if (winner === "x") {
+    x_count++;
+    document.getElementById("1").textContent = `Player X: ${x_count}`;
+  } else {
+    o_count++;
+    document.getElementById("2").textContent = `Player O: ${o_count}`;
+  }
+}
+
+function restart() {
+  for (let i = 1; i < 10; i++) {
+    document.getElementById(`item_${i}`).innerHTML = "";
+  }
+  document.getElementById("title").textContent = "XO Game";
+  turn = "x";
 }

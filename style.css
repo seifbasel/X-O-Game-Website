@@ -1,62 +1,53 @@
-body{
-    background-image: url("3.jpg");
-    background-size:cover;
-    /* background: no-repeat; */
-}
-h1{
-    text-align: center;
-    color: rgb(255, 255, 255);
-}
-body{
-    background-color: #7d1412;
-}
-#title{
-    color: aliceblue;
-    display: block;
-    width: 500;
-    margin: auto;
-    padding: 0;
-    font-size: 50px;
-    font-weight: 700;
-    text-align: center;
-    font-family: Georgia, 'Times New Roman', Times, serif;
-    /* background-color: #12377d; */
-}
-#main_square{
-    height: 600px;
-    width: 600px;
-    margin: auto;
-    padding: 0;
-    align-self: center;
-}
-
-.square{
+body {
     margin: 0;
     padding: 0;
-    border: #253a4b;
-    border-radius: 30%;
-    width: 190px;
-    height: 200px;
-    background-color:#899cc7 ;
-    font-size: 100px;
-    font-weight:  500px; 
+    font-family: 'Segoe UI', sans-serif;
+    background: #f0f2f5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  
+  .game-container {
     text-align: center;
-}
-
-.square:hover{
-    transition: .7s;
-    border-radius:50%;
-    background-color:#123b7d;
-}
-.result{
-    color: #7d1412;
-    margin: auto;
-    font-weight: 700;
-    font-size: 70px;
-}
-.result2{
-    color:#0015ff;
-    margin: auto;
-    font-weight: 7000;
-    font-size: 70px;
-}
+  }
+  
+  #title {
+    font-size: 2.5rem;
+    color: #333;
+    margin-bottom: 20px;
+  }
+  
+  .scoreboard {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+    color: #444;
+  }
+  
+  .board {
+    display: grid;
+    grid-template-columns: repeat(3, 100px);
+    grid-template-rows: repeat(3, 100px);
+    gap: 10px;
+    justify-content: center;
+  }
+  
+  .cell {
+    background-color: #fff;
+    border: 2px solid #ccc;
+    font-size: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background 0.2s;
+  }
+  
+  .cell:hover {
+    background: #e6e6e6;
+  }
+  
